@@ -95,6 +95,15 @@ const resetRadioOption = () => {
   });
 };
 
+const resetGame = () => {
+  diceValuesArr = [0, 0, 0, 0, 0];
+  score = 0;
+  totalScore = 0;
+  round = 1;
+  rolls = 0;
+  listOfAllDice.forEach((dice, index) => {});
+};
+
 rollDiceBtn.addEventListener("click", () => {
   if (rolls === 3) {
     alert("You have made three rolls this round. Please select a score.");
