@@ -84,6 +84,10 @@ const getHighestDuplicates = (arr) => {
   updateRadioOption(5, 0);
 };
 
+const detectFullHouse = (arr) => {
+  const counts = {};
+};
+
 const resetRadioOption = () => {
   scoreInputs.forEach((input) => {
     input.disabled = true;
@@ -101,7 +105,18 @@ const resetGame = () => {
   totalScore = 0;
   round = 1;
   rolls = 0;
-  listOfAllDice.forEach((dice, index) => {});
+
+  listOfAllDice.forEach((dice, index) => {
+    dice.textContent = diceValuesArr[index];
+  });
+
+  totalScoreText.textContent = totalScore;
+  scoreHistory.innerHTML = "";
+
+  currentRoundRollsText.textContent = rolls;
+  currentRoundText.textContent = round;
+
+  resetRadioOption();
 };
 
 rollDiceBtn.addEventListener("click", () => {
@@ -149,6 +164,7 @@ keepScoreBtn.addEventListener("click", () => {
     if (round > 6) {
       setTimeout(() => {
         alert(`Game Over! Your total score is ${totalScore}`);
+        resetGame();
       }, 500);
     }
   } else {
