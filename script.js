@@ -163,6 +163,7 @@ rollDiceBtn.addEventListener("click", () => {
     updateStats();
     getHighestDuplicates(diceValuesArr);
     detectFullHouse(diceValuesArr);
+    checkForStraights(diceValuesArr);
   }
 });
 
